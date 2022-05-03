@@ -1,5 +1,6 @@
 package com.example.Bank_Management.Bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -13,6 +14,19 @@ public class Account {
     long accountNo;
     double balance;
     String accType;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    @JsonIgnore
+    User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public long getAccountNo() {
         return accountNo;

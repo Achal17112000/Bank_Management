@@ -1,9 +1,8 @@
 package com.example.Bank_Management.Bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -18,6 +17,17 @@ public class User {
     String emailId;
     String address;
     String password;
+
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+//    private List<Account> AccList = new ArrayList<>();
+//
+//    public List<Account> getAccList() {
+//        return AccList;
+//    }
+//
+//    public void setAccList(List<Account> accList) {
+//        AccList = accList;
+//    }
 
     public int getId() {
         return id;
